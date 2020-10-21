@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_navigation_graph"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:startDestination="@id/characterListFragment">
+
+    <fragment
+        android:id="@+id/characterListFragment"
+        android:name="sanchez.sanchez.sergio.androidmobiletest.ui.features.characterlist.CharacterListFragment"
+        android:label="CharacterListFragment" >
+        <action
+            android:id="@+id/action_characterListFragment_to_characterDetailFragment"
+            app:destination="@id/characterDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailFragment"
+        android:name="sanchez.sanchez.sergio.androidmobiletest.ui.features.characterdetail.CharacterDetailFragment"
+        android:label="CharacterDetailFragment" >
+        <argument
+            android:name="characterId"
+            app:argType="long" />
+    </fragment>
+</navigation>

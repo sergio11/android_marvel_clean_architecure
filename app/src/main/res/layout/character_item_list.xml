@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:cardElevation="@dimen/character_card_item_elevation"
+    android:layout_height="@dimen/character_card_item_height"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/characterThumbnail"
+            android:layout_width="@dimen/character_thumbnail_size"
+            android:layout_height="@dimen/character_thumbnail_size"
+            android:layout_marginStart="@dimen/common_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/characterNameTextView"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/ic_image_no_available"/>
+
+        <TextView
+            android:id="@+id/characterNameTextView"
+            style="@style/TextAppearance.App.Headline6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="@dimen/common_padding"
+            app:layout_constraintStart_toEndOf="@id/characterThumbnail"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/comicsCountTextView"
+            tools:text="Character Name"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/comicsCountTextView"
+            style="@style/TextAppearance.App.Subtitle2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/characterThumbnail"
+            app:layout_constraintTop_toBottomOf="@id/characterNameTextView"
+            app:layout_constraintEnd_toStartOf="@id/seriesCountTextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="0 comics"/>
+
+        <TextView
+            android:id="@+id/seriesCountTextView"
+            style="@style/TextAppearance.App.Subtitle2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/comicsCountTextView"
+            app:layout_constraintTop_toBottomOf="@id/characterNameTextView"
+            app:layout_constraintEnd_toStartOf="@id/eventsCountTextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="0 series"/>
+
+        <TextView
+            android:id="@+id/eventsCountTextView"
+            style="@style/TextAppearance.App.Subtitle2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/seriesCountTextView"
+            app:layout_constraintTop_toBottomOf="@id/characterNameTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="0 events"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

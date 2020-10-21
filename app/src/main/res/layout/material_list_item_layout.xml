@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/labelTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/valueTextView"
+        android:gravity="start"
+        style="@style/TextAppearance.App.Overline"
+        android:maxLines="2"
+        tools:text="label" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/valueTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/labelTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/helpTextView"
+        android:gravity="start"
+        style="@style/TextAppearance.App.Subtitle1"
+        tools:text="value" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/helpTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/valueTextView"
+        app:layout_constraintBottom_toTopOf="@id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="start"
+        android:layout_marginBottom="@dimen/common_margin"
+        style="@style/TextAppearance.App.Body2"
+        android:maxLines="3"
+        tools:text="This is a help text" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        style="@style/MaterialListItemDivider"
+        app:layout_constraintTop_toBottomOf="@id/helpTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
