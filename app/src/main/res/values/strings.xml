@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AndroidMobileTest</string>
+    <string name="character_list_title">Character list</string>
+    <string name="character_detail_title_title">Character Detail</string>
+    <string name="loading_characters_message">Loading characters, please wait ...</string>
+    <string name="error_occurred_message">An error occurred while retrieving characters</string>
+    <string name="response_from_cache">New data can not be got, you are viewing cached data</string>
+    <string name="character_item_comics" formatted="false">%d comics</string>
+    <string name="character_item_series" formatted="false">%d series</string>
+    <string name="character_item_events" formatted="false">%d events</string>
+</resources>
