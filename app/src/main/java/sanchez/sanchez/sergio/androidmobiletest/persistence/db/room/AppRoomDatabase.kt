@@ -8,7 +8,7 @@ import sanchez.sanchez.sergio.androidmobiletest.persistence.db.room.dao.characte
 import sanchez.sanchez.sergio.androidmobiletest.persistence.db.room.entity.CharacterEntity
 
 @Database(entities = [CharacterEntity::class], version = 1, exportSchema = true)
-//@TypeConverters(Converters::class)
+@TypeConverters(Converters::class)
 abstract class AppRoomDatabase : RoomDatabase() {
 
     /**

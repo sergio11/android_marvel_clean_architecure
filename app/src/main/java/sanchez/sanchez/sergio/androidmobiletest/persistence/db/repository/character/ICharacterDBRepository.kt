@@ -10,7 +10,7 @@ import sanchez.sanchez.sergio.androidmobiletest.persistence.api.exception.RepoNo
 interface ICharacterDBRepository {
 
     @Throws(RepoNoResultException::class, RepoErrorException::class)
-    suspend fun findCharactersOrderByNameDesc(): List<Character>
+    suspend fun findCharactersOrderByNameAsc(): List<Character>
 
     @Throws(RepoNoResultException::class, RepoErrorException::class)
     suspend fun saveCharacters(characterList: List<Character>)

@@ -9,8 +9,8 @@ import sanchez.sanchez.sergio.androidmobiletest.persistence.db.room.entity.Chara
  */
 interface ICharacterDAO: ISupportDAO<CharacterEntity> {
 
-    @Query("SELECT * FROM characters ORDER BY name DESC")
-    suspend fun findAllOrderByNameDesc(): List<CharacterEntity>
+    @Query("SELECT * FROM characters ORDER BY name ASC")
+    suspend fun findAllOrderByNameAsc(): List<CharacterEntity>
 
     @Query("DELETE FROM characters")
     fun deleteAll()

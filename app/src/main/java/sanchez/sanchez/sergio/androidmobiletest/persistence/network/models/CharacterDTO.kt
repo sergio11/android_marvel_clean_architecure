@@ -1,6 +1,7 @@
 package sanchez.sanchez.sergio.androidmobiletest.persistence.network.models
 
 import com.squareup.moshi.Json
+import java.util.*
 
 
 /**
@@ -15,7 +16,7 @@ data class CharacterDTO (
     // A short bio or description of the character
     @field:Json(name = "description") val description: String,
     // The date the resource was most recently modified.
-    @field:Json(name = "modified") val modified: String,
+    @field:Json(name = "modified") val modified: Date?,
     // The representative image for this character.
     @field:Json(name = "thumbnail") val thumbnail: ThumbnailDTO,
     // A resource list containing comics which feature this character.

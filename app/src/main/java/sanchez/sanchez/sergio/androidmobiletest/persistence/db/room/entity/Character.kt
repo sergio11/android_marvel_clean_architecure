@@ -4,6 +4,7 @@ import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.util.*
 
 /**
  * Character Entity Model
@@ -17,9 +18,8 @@ data class CharacterEntity (
     @NonNull
     @ColumnInfo(name = "name")
     val name: String,
-    @NonNull
     @ColumnInfo(name = "modified")
-    val modified: String,
+    val modified: Date? = null,
     @ColumnInfo(name = "thumbnail")
     @NonNull
     val thumbnail: String,

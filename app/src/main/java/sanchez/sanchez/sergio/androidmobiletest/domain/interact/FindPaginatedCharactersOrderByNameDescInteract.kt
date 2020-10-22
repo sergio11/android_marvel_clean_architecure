@@ -19,7 +19,7 @@ class FindPaginatedCharactersOrderByNameDescInteract(
         params: Params,
         onSuccess: (characters: CharactersPage) -> Unit,
         onError: (ex: Exception) -> Unit) = try {
-        val characters = characterRepository.findPaginatedCharactersOrderByNameDesc(
+        val characters = characterRepository.findPaginatedCharactersOrderByNameAsc(
             offset = params.offset,
             limit = params.limit
         )

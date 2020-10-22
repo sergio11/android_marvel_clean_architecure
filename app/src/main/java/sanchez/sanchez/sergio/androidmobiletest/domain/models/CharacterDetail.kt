@@ -1,5 +1,7 @@
 package sanchez.sanchez.sergio.androidmobiletest.domain.models
 
+import java.util.*
+
 /**
  * Character Detail Domain Model
  */
@@ -8,7 +10,7 @@ data class CharacterDetail (
     val id: Long,
     val name: String,
     val description: String,
-    val modified: String,
+    val modified: Date?,
     val thumbnail: String,
     val comics: Comics,
     val series: Comics,
