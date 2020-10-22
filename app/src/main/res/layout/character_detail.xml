@@ -98,35 +98,56 @@
         android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/common_margin">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="@dimen/common_padding"
                     android:orientation="vertical">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        style="@style/TextAppearance.App.Headline5"
+                    <sanchez.sanchez.sergio.androidmobiletest.ui.core.component.MaterialListItem
+                        android:id="@+id/characterDescriptionListItem"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/common_padding"
-                        android:layout_marginBottom="@dimen/common_margin"
-                        android:text="@string/character_detail_title_title"/>
+                        android:layout_marginTop="@dimen/character_detail_list_item_margin_top"
+                        app:valueText="@string/character_description_default_value"
+                        app:labelText="@string/character_description_label" />
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/characterDescriptionTextView"
+                    <sanchez.sanchez.sergio.androidmobiletest.ui.core.component.MaterialListItem
+                        android:id="@+id/characterModifiedAtItem"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/colorAccent"
-                        android:layout_margin="@dimen/common_margin"
-                        tools:text="Character Description"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
+                        android:layout_marginTop="@dimen/character_detail_list_item_margin_top"
+                        app:labelText="@string/character_modified_at_label" />
+
+                    <sanchez.sanchez.sergio.androidmobiletest.ui.core.component.MaterialListItem
+                        android:id="@+id/characterComicItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/character_detail_list_item_margin_top"
+                        app:actionText="@string/character_comic_action"
+                        app:labelText="@string/character_comic_label" />
+
+                    <sanchez.sanchez.sergio.androidmobiletest.ui.core.component.MaterialListItem
+                        android:id="@+id/characterSeriesItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/character_detail_list_item_margin_top"
+                        app:actionText="@string/character_series_action"
+                        app:labelText="@string/character_series_label" />
+
+                    <sanchez.sanchez.sergio.androidmobiletest.ui.core.component.MaterialListItem
+                        android:id="@+id/characterEventsItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/character_detail_list_item_margin_top"
+                        app:actionText="@string/character_events_action"
+                        app:labelText="@string/character_events_label" />
+
 
                 </LinearLayout>
 

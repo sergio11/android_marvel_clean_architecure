@@ -12,7 +12,7 @@ import java.util.*
 @SuppressLint("SimpleDateFormat")
 class DateJsonAdapter {
 
-    private val dateFormat: String = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+    private val dateFormat: String = "yyyy-MM-dd'T'HH:mm:ss-SSS"
 
     private val dateFormatUTC0: SimpleDateFormat by lazy {
         SimpleDateFormat(dateFormat).apply {
