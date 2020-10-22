@@ -60,6 +60,15 @@ class MaterialListItem @JvmOverloads constructor(
             }
         }
 
+    /**
+     * Action Text
+     */
+    var actionText: String? = null
+        set(value) {
+            field = value
+            actionButton.text = value
+        }
+
     init {
         LayoutInflater.from(context)?.inflate(R.layout.material_list_item_layout, this, true)
         context.theme.obtainStyledAttributes(
@@ -67,6 +76,20 @@ class MaterialListItem @JvmOverloads constructor(
         ).also {
             setAttributes(it)
             it.recycle()
+        }
+    }
+
+    /**
+     * Public Methods
+     */
+
+    fun addAction(action: () -> Unit = {}){
+        actionButton.apply {
+            visibility=View.VISIBLE
+            setOnClickListener {
+                action()
+            }
+
         }
     }
 
@@ -93,6 +116,13 @@ class MaterialListItem @JvmOverloads constructor(
             helpText = context.getString(helperResId)
         else
             helpTextView.visibility = View.GONE
+
+        //actionText
+        val actionResId = attrs.getResourceId(R.styleable.MaterialListItem_actionText, DEFAULT_NO_RESOURCE_ID)
+        if(actionResId != DEFAULT_NO_RESOURCE_ID) {
+            actionText = context.getString(actionResId)
+        }
+        actionButton.visibility = View.GONE
 
     }
 

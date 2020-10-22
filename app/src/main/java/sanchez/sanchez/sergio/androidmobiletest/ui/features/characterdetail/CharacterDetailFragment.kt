@@ -11,6 +11,9 @@ import sanchez.sanchez.sergio.androidmobiletest.di.factory.DaggerComponentFactor
 import sanchez.sanchez.sergio.androidmobiletest.domain.models.CharacterDetail
 import sanchez.sanchez.sergio.androidmobiletest.ui.core.SupportFragment
 import sanchez.sanchez.sergio.androidmobiletest.ui.core.ext.loadFromCacheIfExists
+import timber.log.Timber
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * Character Detail Fragment
@@ -19,6 +22,10 @@ class CharacterDetailFragment: SupportFragment<CharacterDetailViewModel>(Charact
 
     private val fragmentComponent: CharacterDetailFragmentComponent by lazy(mode = LazyThreadSafetyMode.NONE) {
         DaggerComponentFactory.getCharacterDetailFragmentComponent(requireActivity() as AppCompatActivity)
+    }
+
+    private val modifiedAtDateFormat by lazy {
+        SimpleDateFormat("yyyy-mm-dd hh:mm:ss", Locale.getDefault())
     }
 
     private val args by navArgs<CharacterDetailFragmentArgs>()
@@ -67,8 +74,40 @@ class CharacterDetailFragment: SupportFragment<CharacterDetailViewModel>(Charact
      */
     private fun onLoadSuccessfully(character: CharacterDetail) {
         characterNameTextView.text = character.name
-        characterDescriptionTextView.text = character.description
+        if(character.description.isNotEmpty())
+            characterDescriptionListItem.valueText = character.description
         characterDetailTitleTextView.text = character.name
+        character.modified?.let {
+            characterModifiedAtItem.valueText = modifiedAtDateFormat.format(it)
+        }
+
+        characterComicItem.apply {
+            valueText = String.format(Locale.getDefault(),
+                getString(R.string.character_comic_value), character.comics.available)
+            if(character.comics.items.isNotEmpty())
+                addAction {
+                    Timber.d("Show Comic Clicked")
+                }
+        }
+
+        characterSeriesItem.apply {
+            valueText = String.format(Locale.getDefault(),
+                getString(R.string.character_series_value), character.series.available)
+            if(character.series.items.isNotEmpty())
+                addAction {
+                    Timber.d("Show Series Clicked")
+                }
+        }
+
+        characterEventsItem.apply {
+            valueText = String.format(Locale.getDefault(),
+                getString(R.string.character_events_value), character.events.available)
+            if(character.events.items.isNotEmpty())
+                addAction {
+                    Timber.d("Show Events Clicked")
+                }
+        }
+
         characterThumbnailImageView.loadFromCacheIfExists(character.thumbnail)
 
     }

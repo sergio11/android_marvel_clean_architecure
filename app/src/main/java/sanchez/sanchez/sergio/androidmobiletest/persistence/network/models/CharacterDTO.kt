@@ -15,7 +15,7 @@ data class CharacterDTO (
     @field:Json(name = "name") val name: String,
     // A short bio or description of the character
     @field:Json(name = "description") val description: String,
-    // The date the resource was most recently modified.
+    // The date the resource was most recently modified. (example: 2018-07-19T21:33:19.000Z or invalid date format)
     @field:Json(name = "modified") val modified: Date?,
     // The representative image for this character.
     @field:Json(name = "thumbnail") val thumbnail: ThumbnailDTO,

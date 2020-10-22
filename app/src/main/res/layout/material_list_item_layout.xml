@@ -46,6 +46,16 @@
         android:maxLines="3"
         tools:text="This is a help text" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/actionButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/valueTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="end|center_vertical"
+        style="@style/Widget.App.Button.TextButton.Small"
+        tools:text="TEXT BUTTON" />
+
     <View
         android:id="@+id/divider"
         android:layout_width="0dp"

@@ -102,4 +102,30 @@
         <item name="android:fontFamily">@font/roboto_regular</item>
     </style>
 
+    <!-- Text Button -->
+    <style name="Widget.App.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:theme">@style/ThemeOverlay.App.Button.Standard</item>
+        <item name="shapeAppearance">?attr/shapeAppearance</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="iconSize">0dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Widget.App.Button.TextButton.Small">
+        <item name="iconSize">@dimen/material_button_small_icon_size</item>
+        <item name="android:textSize">@dimen/material_button_small_text_size</item>
+        <item name="android:layout_height">@dimen/material_button_small_height</item>
+    </style>
+
+    <!-- Standard -->
+    <style name="ThemeOverlay.App.Button.Standard" parent="">
+        <item name="colorPrimary">@color/material_button_color_primary_standard</item>
+        <item name="colorOnPrimary">@color/material_button_color_on_primary_standard</item>
+        <item name="colorOnSurface">@color/colorPrimary</item>
+    </style>
+
 </resources>
