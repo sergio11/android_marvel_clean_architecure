@@ -16,9 +16,9 @@ open class CharacterDBRepositoryImpl (
     private val characterDBMapper: CharacterDBMapper
 ): ICharacterDBRepository {
 
-    override suspend fun findCharactersOrderByNameDesc(): List<Character> = withContext(Dispatchers.IO) {
+    override suspend fun findCharactersOrderByNameAsc(): List<Character> = withContext(Dispatchers.IO) {
         try {
-            val characters = characterDAO.findAllOrderByNameDesc()
+            val characters = characterDAO.findAllOrderByNameAsc()
             // If not transactions found, throw exception
             if(characters.isEmpty())
                 throw DBNoResultException("No characters have been found")

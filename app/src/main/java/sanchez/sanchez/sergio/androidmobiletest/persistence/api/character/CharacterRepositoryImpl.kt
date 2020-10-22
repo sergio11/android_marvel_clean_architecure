@@ -25,7 +25,7 @@ class CharacterRepositoryImpl (
      * @param offset
      * @param limit
      */
-    override suspend fun findPaginatedCharactersOrderByNameDesc(offset: Int, limit: Int): CharactersPage =
+    override suspend fun findPaginatedCharactersOrderByNameAsc(offset: Int, limit: Int): CharactersPage =
         try {
             characterNetworkRepository.findPaginatedCharactersOrderByNameDesc(offset, limit).also {
                 // Cache this data for offline access
@@ -51,7 +51,7 @@ class CharacterRepositoryImpl (
             // Other Network errors (500, 403 ....)
             // Take Characters from last response
             try {
-                val characterList = characterDBRepository.findCharactersOrderByNameDesc()
+                val characterList = characterDBRepository.findCharactersOrderByNameAsc()
                 CharactersPage(
                     isFromCache = true,
                     offset = 0,

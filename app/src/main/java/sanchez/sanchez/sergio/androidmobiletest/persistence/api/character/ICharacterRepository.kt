@@ -16,7 +16,7 @@ interface ICharacterRepository {
      * @param limit
      */
     @Throws(RepoNoResultException::class, RepoErrorException::class)
-    suspend fun findPaginatedCharactersOrderByNameDesc(offset: Int, limit: Int): CharactersPage
+    suspend fun findPaginatedCharactersOrderByNameAsc(offset: Int, limit: Int): CharactersPage
 
     /**
      * Find Character By Id

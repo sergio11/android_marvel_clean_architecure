@@ -74,7 +74,7 @@ class CharacterDetailFragment: SupportFragment<CharacterDetailViewModel>(Charact
     }
 
     /**
-     * on Error Ocurred
+     * on Error Occurred
      * @param ex
      */
     private fun onErrorOccurred(ex: Exception) {
