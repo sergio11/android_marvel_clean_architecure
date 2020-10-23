@@ -23,4 +23,4 @@
 
 
 ## Tests
-<img width="250px"  src="./screenshots/image_7.png" />
+<img width="250px"  src="./screenshots/image_7.PNG" />
