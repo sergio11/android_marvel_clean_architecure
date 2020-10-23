@@ -1,17 +1,22 @@
 <resources>
     <string name="app_name">AndroidMobileTest</string>
     <string name="character_list_title">Character list</string>
+    <string name="character_detail_error">An error occurred while retrieving the character detail</string>
+    <string name="character_detail_error_accept_button">Accept</string>
     <string name="character_description_label">Description</string>
     <string name="character_description_default_value">No Description</string>
     <string name="character_modified_at_label">Modified At</string>
     <string name="character_comic_label">Comic</string>
-    <string name="character_comic_action">Show</string>
+    <string name="character_comic_dialog_detail_title">Comics List</string>
+    <string name="character_comic_action">see more</string>
     <string name="character_comic_value" formatted="false">Available in %d comics</string>
     <string name="character_series_label">Series</string>
-    <string name="character_series_action">Show</string>
+    <string name="character_series_dialog_detail_title">Series List</string>
+    <string name="character_series_action">see more</string>
     <string name="character_series_value" formatted="false">Available in %d series</string>
     <string name="character_events_label">Events</string>
-    <string name="character_events_action">Show</string>
+    <string name="character_events_dialog_detail_title">Events List</string>
+    <string name="character_events_action">see more</string>
     <string name="character_events_value" formatted="false">Available in %d events</string>
     <string name="loading_characters_message">Loading characters, please wait ...</string>
     <string name="error_occurred_message">An error occurred while retrieving characters</string>

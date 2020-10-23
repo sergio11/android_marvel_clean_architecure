@@ -2,15 +2,19 @@ package sanchez.sanchez.sergio.androidmobiletest.ui.features.characterdetail
 
 import android.os.Bundle
 import android.view.View
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.character_detail.*
 import sanchez.sanchez.sergio.androidmobiletest.R
 import sanchez.sanchez.sergio.androidmobiletest.di.component.character.CharacterDetailFragmentComponent
 import sanchez.sanchez.sergio.androidmobiletest.di.factory.DaggerComponentFactory
 import sanchez.sanchez.sergio.androidmobiletest.domain.models.CharacterDetail
+import sanchez.sanchez.sergio.androidmobiletest.domain.models.ComicsItem
 import sanchez.sanchez.sergio.androidmobiletest.ui.core.SupportFragment
 import sanchez.sanchez.sergio.androidmobiletest.ui.core.ext.loadFromCacheIfExists
+import sanchez.sanchez.sergio.androidmobiletest.ui.core.ext.popBackStack
 import timber.log.Timber
 import java.text.SimpleDateFormat
 import java.util.*
@@ -86,7 +90,10 @@ class CharacterDetailFragment: SupportFragment<CharacterDetailViewModel>(Charact
                 getString(R.string.character_comic_value), character.comics.available)
             if(character.comics.items.isNotEmpty())
                 addAction {
-                    Timber.d("Show Comic Clicked")
+                    showDetailDialog(
+                        titleRes = R.string.character_comic_dialog_detail_title,
+                        items = character.comics.items
+                    )
                 }
         }
 
@@ -95,7 +102,10 @@ class CharacterDetailFragment: SupportFragment<CharacterDetailViewModel>(Charact
                 getString(R.string.character_series_value), character.series.available)
             if(character.series.items.isNotEmpty())
                 addAction {
-                    Timber.d("Show Series Clicked")
+                    showDetailDialog(
+                        titleRes = R.string.character_series_dialog_detail_title,
+                        items = character.series.items
+                    )
                 }
         }
 
@@ -104,7 +114,10 @@ class CharacterDetailFragment: SupportFragment<CharacterDetailViewModel>(Charact
                 getString(R.string.character_events_value), character.events.available)
             if(character.events.items.isNotEmpty())
                 addAction {
-                    Timber.d("Show Events Clicked")
+                    showDetailDialog(
+                        titleRes = R.string.character_events_dialog_detail_title,
+                        items = character.events.items
+                    )
                 }
         }
 
@@ -117,7 +130,26 @@ class CharacterDetailFragment: SupportFragment<CharacterDetailViewModel>(Charact
      * @param ex
      */
     private fun onErrorOccurred(ex: Exception) {
-
+        Timber.d("OnErrorOccurred -> ${ex.message}")
+        MaterialAlertDialogBuilder(requireContext())
+            .setMessage(resources.getString(R.string.character_detail_error))
+            .setPositiveButton(resources.getString(R.string.character_detail_error_accept_button)) { dialog, which ->
+                popBackStack(R.id.characterListFragment)
+            }
+            .show()
     }
+
+    /**
+     * Show Detail Dialog
+     * @param titleRes
+     * @param items
+     */
+    private fun showDetailDialog(@StringRes titleRes: Int, items: List<ComicsItem>) {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(titleRes)
+            .setItems(items.map { it.name }.toTypedArray(), null)
+            .show()
+    }
+
 
 }

@@ -22,7 +22,7 @@ interface ISupportDAO<T> {
      * Insert an object in the database.
      *
      * @param entity the object to be inserted.
-     * @return The SQLite row userPublicId
+     * @return The SQLite row
      */
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     @Transaction
