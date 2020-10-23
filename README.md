@@ -7,6 +7,7 @@
 * Asynchronous operations management with cooroutines.
 * Using Material Design guidelines.
 * Using local storage to implement cache layer through repository pattern.
+* Testing with mockito, assertj, junit..
 
 ## Screenshots
 
@@ -23,4 +24,4 @@
 
 
 ## Tests
-<img width="250px"  src="./screenshots/image_7.PNG" />
+<img width="600px"  src="./screenshots/image_7.PNG" />
