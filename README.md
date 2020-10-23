@@ -9,6 +9,11 @@
 * Using local storage to implement cache layer through repository pattern.
 * Testing with mockito, assertj, junit..
 
+## Possible improvements.
+
+* Using the Jetpack Paging library.
+* UI Testing.
+
 ## Screenshots
 
 
