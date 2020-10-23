@@ -19,9 +19,6 @@ class MainActivity: AppCompatActivity() {
         activityComponent.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.statusBarColor = ContextCompat.getColor(this, R.color.colorPrimaryDark)
     }
 
 }

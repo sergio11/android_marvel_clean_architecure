@@ -19,7 +19,7 @@ open class CharacterDBRepositoryImpl (
     override suspend fun findCharactersOrderByNameAsc(): List<Character> = withContext(Dispatchers.IO) {
         try {
             val characters = characterDAO.findAllOrderByNameAsc()
-            // If not transactions found, throw exception
+            // If not characters found, throw exception
             if(characters.isEmpty())
                 throw DBNoResultException("No characters have been found")
             characterDBMapper.entityToModel(characters)
@@ -34,10 +34,10 @@ open class CharacterDBRepositoryImpl (
         try {
             // First, remove old data
             characterDAO.deleteAll()
-            // Insert new transactions data
+            // Insert new characters data
             characterDAO.insert(characterDBMapper.modelToEntity(characterList))
         } catch (ex: Exception) {
-            throw DBErrorException("Error occurred when Save transactions", ex)
+            throw DBErrorException("Error occurred when save characters", ex)
         }
     }
 
@@ -45,7 +45,7 @@ open class CharacterDBRepositoryImpl (
         try {
             characterDAO.deleteAll()
         } catch (ex: Exception) {
-            throw DBErrorException("Error occurred when Delete characters", ex)
+            throw DBErrorException("Error occurred when delete characters", ex)
         }
     }
 

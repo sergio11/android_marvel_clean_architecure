@@ -1,5 +1,9 @@
 package sanchez.sanchez.sergio.androidmobiletest.persistence.network.exception
 
+/**
+ * Network Exceptions
+ */
+
 class NetworkBadRequestException(message: String? = null, cause: Throwable? = null):
     NetworkException(message, cause)
 
