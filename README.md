@@ -1,4 +1,4 @@
-# Android Mobile Test
+# Android Marvel Clean Architecture
 
 ## Main Goals
 
